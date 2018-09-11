@@ -1,7 +1,7 @@
 const User = require('../models/user.model');
 const { check, validationResult } = require('express-validator/check');
 const jwt = require('jsonwebtoken');
-const jwt_secret = process.env.JWT_SECRET || 'buhahahahaha';
+const jwt_secret = process.env.JWT_SECRET || require('../utils/config').JWT_SECRET;
 
 /* Validations for registrations */
 exports._register_checks = [
