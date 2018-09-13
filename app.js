@@ -25,11 +25,9 @@ mongoose.connect(mongo_url).then(
 });
 
 // import all routes
-const index = require('./routes/index');
-const users = require('./routes/users');
-const register = require('./routes/register');
-const login = require('./routes/login');
-const events = require('./routes/events');
+const index     = require('./routes/index');
+const register  = require('./routes/register');
+const login     = require('./routes/login');
 
 const app = express();
 
@@ -44,11 +42,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//routes
 app.use('/', index);
-app.use('/users', users);
 app.use('/register', register);
 app.use('/login', login);
-app.use('/events', events);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

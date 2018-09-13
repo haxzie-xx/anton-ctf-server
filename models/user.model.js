@@ -11,8 +11,12 @@ const userSchema = new Schema({
     },
     password: {
         type: String,
-        requires: true,
+        required: true,
         max: 50,
+    },
+    admin: {
+        type: Boolean,
+        default: false
     },
     profile: {
         name: {
