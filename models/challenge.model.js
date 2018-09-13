@@ -3,9 +3,6 @@ const Schema = mongoose.Schema;
 const dbStrings = require('../utils/dbStrings');
 
 const ChallengeSchema = new Schema({
-    _id: {
-        type: Schema.Types.ObjectId
-    },
     name: {
         type: String,
         required: true,

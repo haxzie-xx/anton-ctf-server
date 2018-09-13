@@ -3,6 +3,8 @@ const router = express.Router();
 const challengeController = require('../controllers/challenge.controller');
 const verify = require('../utils/verify');
 
+
+//=============================================================================
 /* GET all the challenges. */
 router.get('/', verify.user, challengeController.getAllChallenge);
 

@@ -150,7 +150,7 @@ module.exports.createChallenge = function(req, res) {
         });
     }
 
-    const userId = req.decoded.id,
+    const userId = req.decoded.id;
     const challenge = new Challenge({
         name: req.body.name,
         creator: userId,
@@ -194,17 +194,17 @@ module.exports.editChallenge = function(req, res) {
         });
     }
 
-    const userId = req.decoded.id,
-    const challenge = new Challenge({
+    const userId = req.decoded.id;
+    const challenge = {
         name: req.body.name,
         creator: userId,
         description: req.body.description,
         category: req.body.category,
         flag: req.body.flag,
         points: req.body.points
-    });
+    };
 
-    Challenge.update({_id: req.params.id }, challenge, {upsert:true}).exec().then(doc => {
+    Challenge.update({_id: req.params.id }, challenge, {upsert:false}).exec().then(doc => {
         return res.status(200).json({
             message: `Success`,
             doc: doc

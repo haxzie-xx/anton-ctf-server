@@ -9,6 +9,21 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.post('/', authController._auth_checks, authController.getAuth);
+//to authenticate
+router.post('/', 
+    authController._auth_checks, 
+    authController.getAuth
+);
+
+/*
+*   ==============================
+*   COMMENT IT OUT IN PRODUCTION
+*   ==============================
+*/
+//to register a new ADMIN
+router.post('/create_admin',
+    authController._auth_create_checks,
+    authController.createAuth,
+);
 
 module.exports = router;

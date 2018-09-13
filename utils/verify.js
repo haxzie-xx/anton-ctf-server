@@ -23,7 +23,7 @@ exports.user = function(req, res, next) {
             //check if the token contains userID and email
             if (decoded.id && decoded.email) {
                 req.decoded = decoded;
-                if (decoded.team){
+                if (decoded.team || decoded.admin === true){
                     next(); //if yes, Authorization success
                 }else {
                     return res.status(202).json({
