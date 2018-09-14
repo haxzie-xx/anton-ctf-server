@@ -26,9 +26,9 @@ const TeamSchema = new Schema({
             type: Schema.Types.ObjectId,
             ref: dbStrings.collection.USER,
         },
-        team: {
+        challenge: {
             type: Schema.Types.ObjectId,
-            ref: dbStrings.collection.USER,
+            ref: dbStrings.collection.CHALLENGE,
         },
         fat: {
             type: Date,

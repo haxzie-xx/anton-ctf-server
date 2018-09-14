@@ -1,7 +1,5 @@
 const Challenge = require('../models/challenge.model');
 const { check, validationResult } = require('express-validator/check');
-const jwt = require('jsonwebtoken');
-const jwt_secret = process.env.JWT_SECRET || require('../utils/config').JWT_SECRET;
 
 /* Controller to get all Challenges */
 module.exports.getAllChallenge = function(req, res) {

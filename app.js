@@ -30,6 +30,7 @@ const registerRoute  = require('./routes/register');
 const loginRoute     = require('./routes/login');
 const authRoute      = require('./routes/auth');
 const challengeRoute = require('./routes/challenge');
+const teamRoute      = require('./routes/team');
 
 const app = express();
 
@@ -51,6 +52,7 @@ app.use('/register', registerRoute);
 app.use('/login', loginRoute);
 app.use('/auth', authRoute);
 app.use('/challenge', challengeRoute);
+app.use('/team', teamRoute);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
